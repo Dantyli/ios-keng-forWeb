@@ -1,0 +1,22 @@
+//ios的safari浏览器对input标签中的required属性不支持
+<form action="index.php" method="post">
+	<input type="text" name="password" required="required" value="" />
+	<button type="submit">submit</button>
+</form>
+//对new Date()进行时间设置失效
+var myDate=new Date();
+myDate.setDate(myDate.getDate()+1);//设置为明天可以
+var myDate=new Date('2017-09-01');//ios设备会出错，Android设备没问题
+//替代方法可以考虑将时间转化为时间戳形式
+var timestamp=new Date().getTime();//加减一天对应的毫秒数进行设置
+//position：fixed定位在ios设备中如果超出页面部分没有设置overflow：hidden，很多情况下会出现页面移动固定模块也移动然后重新定位到相应位置的问题
+<style>
+	header{position: fixed;top: 0;left: 0;height: 44px;}
+	.contain{height: 2000px;width: 100%;}
+</style>
+<body>
+	<header>我是头部</header>
+	<div class="contain">
+		我是内容
+	</div>
+</body>
